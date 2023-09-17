@@ -7,17 +7,19 @@ while repeat == "yes":
     print("Your current available amount is: ")
     print(money)
 
-    num = random.randint(0, 37)
-
-    if num % 2 == 1:
-        color = "red"
-
-    elif num % 2 == 0:
-        color = "black"
-
-    else: 
+    num = random.randint(1, 37)
+    if num == 37:
         color = "green"
 
+    else:
+        if num % 2 == 1:
+            color = "red"
+
+        elif num % 2 == 0:
+            color = "black"
+
+
+    print(color)
     selected_clr = (input("Choose color you want to bet on (red or black): "))
     selected_amm = int(input("Choose ammount you want to bet: "))
 
@@ -28,7 +30,7 @@ while repeat == "yes":
     print("The color is " + color)
 
     if selected_clr == color:
-        money = money + selected_amm * 2
+        money = money + selected_amm
         print("You have won! Your current ammount is: ")
         print(money)
     else:
